@@ -60,7 +60,7 @@ ADMIN_ID = "8610592669"
 
 HOST = "0.0.0.0"
 PORT = 8443
-PUBLIC_URL = None  # Leave as None for fully automatic detection
+PUBLIC_URL = "https://rda-bot-tpcg.onrender.com"
 
 SESSION_TTL_HOURS = 24
 JPEG_QUALITY = 80
