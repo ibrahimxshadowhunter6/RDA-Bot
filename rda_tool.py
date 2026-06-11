@@ -1060,6 +1060,12 @@ async def main():
     app.router.add_get("/", root)
     app.router.add_get("/a/{token}", index)
     app.router.add_get("/ws", ws_handler)
+    async def tg_webhook_handler(req):
+        data = await req.json()
+        await handle_cmd(data)
+        return web.Response(status=200)
+
+    app.router.add_post("/webhook", tg_webhook_handler)
 
     # --- Step 5: Start background tasks ---
     poll_task = asyncio.create_task(poller())
