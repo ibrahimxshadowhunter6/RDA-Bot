@@ -31,7 +31,7 @@ Telegram Commands:
     /url        - Show current public URL
     /help       - Show help
 """
-
+import os
 import asyncio
 import base64
 import json
@@ -59,7 +59,7 @@ TOKEN = "8941952240:AAEcbI6LaKedmcshu4G193341LZGrGZ32ec"
 ADMIN_ID = "8610592669"
 
 HOST = "0.0.0.0"
-PORT = 8443
+PORT = int(os.environ.get("PORT", 10000))
 PUBLIC_URL = "https://rda-bot-tpcg.onrender.com"
 
 SESSION_TTL_HOURS = 24
